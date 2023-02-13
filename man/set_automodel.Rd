@@ -81,3 +81,17 @@ and the model with the best fit is selected. Criteria considered are residual di
 \description{
 Set Automodel Specification
 }
+\seealso{
+Other specification functions: 
+\code{\link{add_outlier}()},
+\code{\link{add_usrdefvar}()},
+\code{\link{set_arima}()},
+\code{\link{set_basic}()},
+\code{\link{set_benchmarking}()},
+\code{\link{set_easter}()},
+\code{\link{set_estimate}()},
+\code{\link{set_outlier}()},
+\code{\link{set_tradingdays}()},
+\code{\link{set_transform}()}
+}
+\concept{specification functions}

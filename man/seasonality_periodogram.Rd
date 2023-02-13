@@ -9,7 +9,8 @@ seasonality_periodogram(data, period, nyears = 0)
 \arguments{
 \item{data}{the input data.}
 
-\item{period}{Tested periodicity.}
+\item{period}{Tested periodicity.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 
 \item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
 in periods (positive value) or years (negative values).
@@ -28,3 +29,13 @@ Tests on the sum of a periodogram at seasonal frequencies.
 seasonality_periodogram(ABS$X0.2.09.10.M, 12)
 seasonality_periodogram(randoms_t(2, 1000), 7)
 }
+\seealso{
+Other seasonality tests: 
+\code{\link{seasonality_canovahansen}()},
+\code{\link{seasonality_combined}()},
+\code{\link{seasonality_friedman}()},
+\code{\link{seasonality_f}()},
+\code{\link{seasonality_kruskalwallis}()},
+\code{\link{seasonality_qs}()}
+}
+\concept{seasonality tests}

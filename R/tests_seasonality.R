@@ -8,12 +8,14 @@ NULL
 #'
 #' @param data the input data.
 #' @param period Tested periodicity.
+#' If `data` is a `ts` object, by default `period` is set to the frequency of `data`.
 #' @param nyears Number of number of periods number of cycles considered in the test, at the end of the series:
 #' in periods (positive value) or years (negative values).
 #' By default (\code{nyears = 0}), the entire sample is used.
 #'
 #' @return A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
 #' @export
+#' @family seasonality tests
 #'
 #' @examples
 #' seasonality_qs(ABS$X0.2.09.10.M, 12)
@@ -34,6 +36,7 @@ seasonality_qs<-function(data, period, nyears=0){
 #' @details Non parametric test on the ranks.
 #' @return A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
 #' @export
+#' @family seasonality tests
 #'
 #' @examples
 #' seasonality_kruskalwallis(ABS$X0.2.09.10.M, 12)
@@ -53,6 +56,7 @@ seasonality_kruskalwallis<-function(data, period, nyears=0){
 #' @details Tests on the sum of a periodogram at seasonal frequencies.
 #' @return A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
 #' @export
+#' @family seasonality tests
 #'
 #' @examples
 #' seasonality_periodogram(ABS$X0.2.09.10.M, 12)
@@ -72,8 +76,10 @@ seasonality_periodogram<-function(data, period, nyears=0){
 #' @details Non parametric test ("ANOVA"-type).
 #' @return A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
 #' @export
+#' @family seasonality tests
 #'
 #' @examples
+#' seasonality_friedman(ABS$X0.2.09.10.M, 12)
 seasonality_friedman<-function(data, period, nyears=0){
   if (is.ts(data) & missing(period))
     period <- frequency(data)
@@ -89,6 +95,7 @@ seasonality_friedman<-function(data, period, nyears=0){
 #' @details Estimation of a model with seasonal dummies. Joint F-test on the coefficients of the dummies.
 #' @return A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
 #' @export
+#' @family seasonality tests
 #'
 #' @examples
 #' seasonality_f(ABS$X0.2.09.10.M, 12)
@@ -113,6 +120,7 @@ seasonality_f<-function(data,
 #' @param mul boolean indicating if the seasonal decomposition is multiplicative (`mul = TRUE`) or additive (`mul = FALSE`).
 #' @details Combined test on the presence of identifiable seasonality (see Ladiray and Quenneville, 1999).
 #' @export
+#' @family seasonality tests
 #'
 #' @examples
 #' seasonality_combined(ABS$X0.2.09.10.M, 12)
@@ -137,8 +145,9 @@ seasonality_combined<-function(data, period, firstperiod=1, mul=TRUE){
 #' @param p0 Initial periodicity (included)
 #' @param p1 Final periodicity (included)
 #' @param np Number of periodicities equally spaced in $\[p0,p1\]$
-#' @param original True for original algorithm, False for solution proposed by T. Proietti (based on Ox code)
+#' @param original `TRUE` for original algorithm, False for solution proposed by T. Proietti (based on Ox code)
 #'
+#' @family seasonality tests
 #' @export
 #'
 #' @examples

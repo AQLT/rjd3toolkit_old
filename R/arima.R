@@ -13,6 +13,7 @@ NULL
 #' @param btheta coefficients of the seasonal moving average polynomial. True signs.
 #' @param name name of the model.
 #'
+#' @family SARIMA functions
 #' @return A `"JD3_SARIMA"` model.
 #' @export
 sarima_model<-function(name="sarima", period, phi=NULL, d=0, theta=NULL, bphi=NULL, bd=0, btheta=NULL){
@@ -27,6 +28,7 @@ sarima_model<-function(name="sarima", period, phi=NULL, d=0, theta=NULL, bphi=NU
 #' @param nspectrum number of points in \[0, pi\] to calculate the spectrum.
 #' @param nacf maximum lag at which to calculate the acf.
 #'
+#' @family SARIMA functions
 #' @examples
 #' mod1 <- sarima_model(period = 12, d = 1, bd = 1, theta = 0.2, btheta = 0.2)
 #' sarima_properties(mod1)
@@ -48,6 +50,7 @@ sarima_properties<-function(model, nspectrum=601, nacf=36){
 #' @param tdegree degrees of freedom of the T distribution of the innovations.
 #' `tdegree = 0` if normal distribution is used.
 #'
+#' @family SARIMA functions
 #' @examples
 #' # Airline model
 #' s_model <- sarima_model(period = 12, d =1, bd = 1, theta = 0.2, btheta = 0.2)
@@ -79,6 +82,7 @@ sarima_random<-function(model, length, stde=1, tdegree=0){
 #' @return
 #' @export
 #'
+#' @family SARIMA functions
 #' @examples
 #' model <- sarima_model(period = 12, d =1, bd = 1, theta = -0.6, btheta = -0.5)
 #' ucm <- sarima_decompose(model)
@@ -102,6 +106,7 @@ sarima_decompose<-function(model, rmod=0, epsphi=0){
 #' @param ma coefficients of the regular moving average polynomial (1 + ma(1)B + ma(2)B + ...). True signs.
 #' @param variance variance.
 #'
+#' @family SARIMA functions
 #' @return a `"JD3_ARIMA"` model.
 #' @export
 #'
@@ -167,6 +172,7 @@ arima_model<-function(name="arima", ar=1, delta=1, ma=1, variance=1){
 #' polynomials is then computed and factorized, to get the moving average
 #' polynomial and innovation variance of the sum.
 #'
+#' @family SARIMA functions
 #' @examples
 #' mod1 = arima_model(ar = c(0.1, 0.2), delta = 0, ma = 0)
 #' mod2 = arima_model(ar = 0, delta = 0, ma = c(0.4))
@@ -189,6 +195,7 @@ arima_lsum<-function(components){
 #' @param nspectrum number of points in \[0, pi\] to calculate the spectrum.
 #' @param nacf maximum lag at which to calculate the acf.
 #'
+#' @family SARIMA functions
 #' @examples
 #' mod1 = arima_model(ar = c(0.1, 0.2), delta = 0, ma = 0)
 #' arima_properties(mod1)
@@ -207,6 +214,7 @@ arima_properties<-function(model, nspectrum=601, nacf=36){
 #' @param complements Complements of (some) components
 #'
 #' @return
+#' @family SARIMA functions
 #' @export
 #'
 #' @examples
@@ -246,6 +254,7 @@ ucarima_model<-function(model=NULL, components, complements=NULL, checkmodel=F){
 #' @param nwk
 #'
 #' @return
+#' @family SARIMA functions
 #' @export
 #'
 #' @examples
@@ -267,6 +276,7 @@ ucarima_wk<-function(ucm, cmp, signal=TRUE, nspectrum=601, nwk=300){
 #' @param adjust
 #'
 #' @return
+#' @family SARIMA functions
 #' @export
 #'
 #' @examples
@@ -284,6 +294,7 @@ ucarima_canonical<-function(ucm, cmp=0, adjust=TRUE){
 #' @param stdev
 #'
 #' @return matrix containing the different components.
+#' @family SARIMA functions
 #' @export
 #'
 #' @examples
@@ -305,6 +316,7 @@ ucarima_estimate<-function(x, ucm, stdev=TRUE){
 #' @param eps precision.
 #'
 #' @return
+#' @family SARIMA functions
 #' @export
 #'
 #' @examples

@@ -61,3 +61,18 @@ BE <- national_calendar(list(
     special_day('ARMISTICE')))
 calendar_td(BE, 12, c(1980,1), 240)
 }
+\seealso{
+Other calendar functions: 
+\code{\link{easter_dates}()},
+\code{\link{easter_day}()},
+\code{\link{fixed_day}()},
+\code{\link{fixed_week_day}()},
+\code{\link{holidays}()},
+\code{\link{long_term_mean}()},
+\code{\link{national_calendar}()},
+\code{\link{single_day}()},
+\code{\link{special_day}()},
+\code{\link{stock_td}()},
+\code{\link{td}()}
+}
+\concept{calendar functions}

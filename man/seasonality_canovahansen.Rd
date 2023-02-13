@@ -15,8 +15,18 @@ seasonality_canovahansen(data, p0, p1, np, original = FALSE)
 
 \item{np}{Number of periodicities equally spaced in $[p0,p1]$}
 
-\item{original}{True for original algorithm, False for solution proposed by T. Proietti (based on Ox code)}
+\item{original}{\code{TRUE} for original algorithm, False for solution proposed by T. Proietti (based on Ox code)}
 }
 \description{
 Seasonal Canova-Hansen test
 }
+\seealso{
+Other seasonality tests: 
+\code{\link{seasonality_combined}()},
+\code{\link{seasonality_friedman}()},
+\code{\link{seasonality_f}()},
+\code{\link{seasonality_kruskalwallis}()},
+\code{\link{seasonality_periodogram}()},
+\code{\link{seasonality_qs}()}
+}
+\concept{seasonality tests}

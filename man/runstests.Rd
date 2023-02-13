@@ -2,34 +2,18 @@
 % Please edit documentation in R/tests_regular.R
 \name{runstests}
 \alias{runstests}
-\alias{testofruns}
-\alias{testofupdownruns}
 \title{Runs Tests around the mean or the median}
-\usage{
-testofruns(data, mean = T, number = T)
-
-testofupdownruns(data, number = T)
-}
 \arguments{
-\item{data}{data being tested.}
-
 \item{mean}{If \code{TRUE}, runs around the mean. Otherwise, runs around the median.}
 
 \item{number}{If \code{TRUE}, test the number of runs. Otherwise, test the lengths of the runs.}
 }
 \value{
-A \code{c("JD3_TEST", "JD3")} object (see \code{\link[=statisticaltest]{statisticaltest()}}} for details).
+A \code{c("JD3_TEST", "JD3")} object (see \code{\link[=statisticaltest]{statisticaltest()}} for details).
 }
 \description{
 Functions to compute runs test around the mean or the median (\code{testofruns}) or up and down runs test (\code{testofupdownruns}) to check randomness of a data.
 }
-\section{Functions}{
-\itemize{
-\item \code{testofruns()}: Runs test around mean or median
-
-\item \code{testofupdownruns()}: up and down runs test
-
-}}
 \examples{
 x <- randoms_t(5, 1000)
 # random values

@@ -10,6 +10,8 @@
 #' @param start,end dates of the ramp regressor.
 #' @param name the name of the variable (to format print).
 #' @param coef the coefficient. If equal to 0 the outliers/ramps are estimated.
+#'
+#' @family specification functions
 #' @export
 add_outlier <- function(x,
                         type,
@@ -203,6 +205,7 @@ remove_ramp.default <- function(x,
 #'
 #' @param preprocessing (REGARIMA/X13 Specific) a boolean to enable/disable the pre-processing.
 #'
+#' @family specification functions
 #' @export
 set_basic <- function(x,
                       type = c(NA, "All", "From", "To", "Between", "Last", "First", "Excluding"),
@@ -253,6 +256,8 @@ set_basic.default <- function(x,
 #' for identification of differencing orders. If the magnitude of an AR root for the final model is smaller than this number,
 #'  then a unit root is assumed, the order of the AR polynomial is reduced by one and the appropriate order of the differencing
 #'  (non-seasonal, seasonal) is increased.
+#'
+#' @family specification functions
 #'
 #' @export
 set_estimate <- function(x,
@@ -326,6 +331,8 @@ set_estimate.default <- function(x,
 #' @param eml.est (TRAMO Specific) \code{logical} for the exact likelihood estimation method. It controls the method applied for a parameter estimation
 #' in the intermediate steps of the automatic detection and correction of outliers. If \code{TRUE}, an exact likelihood estimation method is used.
 #' When \code{FALSE}, the fast Hannan-Rissanen method is used.
+#'
+#' @family specification functions
 #' @export
 set_outlier <- function(x,
                         span.type = c(NA, "All", "From", "To", "Between", "Last", "First", "Excluding"),
@@ -472,6 +479,8 @@ set_outlier.default <- function(x,
 #' of the combined MA operator).
 #' @param amicompare (TRAMO Specific) \code{logical}. If `TRUE`, the program compares the model identified by the automatic procedure to the default model (\eqn{ARIMA(0,1,1)(0,1,1)})
 #' and the model with the best fit is selected. Criteria considered are residual diagnostics, the model structure and the number of outliers.
+#'
+#' @family specification functions
 #' @export
 set_automodel <- function(x,
                           enabled = NA,
@@ -591,6 +600,8 @@ set_automodel.default <- function(x,
 #' Possible procedures are: \code{"Undefined"} = no use of any user-defined input (i.e. coefficients are estimated),
 #' \code{"Fixed"} = the coefficients are fixed at the value provided by the user,
 #' \code{"Initial"} = the value defined by the user is used as the initial condition.
+#'
+#' @family specification functions
 #'
 #' @export
 set_arima <- function(x,
@@ -766,6 +777,8 @@ set_arima.default <- function(x,
 #'
 #' @param leapyear.coef coefficient of the leapyear regressor.
 #' @param coef.type,leapyear.coef.type vector defining if the coefficients are fixed or estimated.
+#'
+#' @family specification functions
 #' @export
 set_tradingdays<- function(x,
                            option = c(NA, "TradingDays", "WorkingDays", "TD3", "TD3c", "TD4", "None", "UserDefined"),
@@ -968,6 +981,8 @@ set_tradingdays.default <- function(x,
 #' \code{"Unused"} = the Easter effect is not considered; \code{"Standard"} = influences the period of \code{n} days strictly before Easter Sunday;
 #' \code{"IncludeEaster"} = influences the entire period (\code{n}) up to and including Easter Sunday;
 #' \code{"IncludeEasterMonday"} = influences the entire period (\code{n}) up to and including Easter Monday.
+#'
+#' @family specification functions
 #' @export
 set_easter<- function(x, enabled = NA,
                       julian = NA,
@@ -1072,6 +1087,8 @@ set_easter.default <- function(x, enabled = NA,
 #' \code{transform.fct}> 1 favours levels, \code{transform.fct}< 1 favours logs.
 #' Considered only when \code{fun = "Auto"}.
 #'
+#' @family specification functions
+#'
 #' @export
 set_transform<- function(x,
                          fun = c(NA, "Auto", "Log", "None"),
@@ -1140,6 +1157,8 @@ set_transform.default <- function(x,
 #' @param coef the coefficient.
 #' @param regeffect assigned component of the user-defined variable.
 #' By default (`"Undefined"`), the variable is assigned to an additional component: the variable is used to improve the modelling, but it is not removed from the series for the decomposition.
+#'
+#' @family specification functions
 #'
 #' @export
 add_usrdefvar <- function(x,

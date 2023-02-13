@@ -9,7 +9,8 @@ do_stationary(data, period)
 \arguments{
 \item{data}{Series being differenced.}
 
-\item{period}{Period of the series.}
+\item{period}{Period of the series.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 }
 \value{
 Stationary transformation
@@ -28,4 +29,8 @@ Stationary transformation of a series by simple differencing of lag 1.
 Automatic processing (identification of the order of the differencing) based on auto-correlations and on mean correction.
 The series should not be seasonal.
 Source: Tramo
+}
+\examples{
+do_stationary(retail$BookStores)
+
 }

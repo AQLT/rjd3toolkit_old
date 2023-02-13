@@ -7,6 +7,7 @@
 #' @param lambda a parameter in the function used for benchmarking that relates to the weights in the regression equation; it is typically equal to 0, 1/2 or 1.
 #' @param forecast boolean indicating if the forecasts of the seasonally adjusted series and of the target variable (\code{target}) are used in the benchmarking computation so the benchmarking constrain is applied also to the forecasting period.
 #' @param bias TODO
+#' @family specification functions
 #' @export
 set_benchmarking <- function(x, enabled = NA,
                              target = c(NA, "CalendarAdjusted", "Normal"),

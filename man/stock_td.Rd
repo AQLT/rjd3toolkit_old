@@ -20,3 +20,18 @@ parameters \code{frequency}, \code{start} and \code{length} are ignored.}
 \description{
 Stock Trading days
 }
+\seealso{
+Other calendar functions: 
+\code{\link{calendar_td}()},
+\code{\link{easter_dates}()},
+\code{\link{easter_day}()},
+\code{\link{fixed_day}()},
+\code{\link{fixed_week_day}()},
+\code{\link{holidays}()},
+\code{\link{long_term_mean}()},
+\code{\link{national_calendar}()},
+\code{\link{single_day}()},
+\code{\link{special_day}()},
+\code{\link{td}()}
+}
+\concept{calendar functions}

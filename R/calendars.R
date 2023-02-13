@@ -63,6 +63,8 @@ SINGLEDAY='JD3_SINGLEDAY'
 #'
 #' @export
 #'
+#' @family calendar functions
+#'
 #' @examples
 #' day <- fixed_day(7, 21, .9)
 #' day  # 21 July, with weight=0.9
@@ -101,6 +103,8 @@ fixed_day<-function(month, day, weight=1, validity=NULL){
 #' `-1` for the last `dayofweek` of the month.
 #' @param dayofweek day of the week: from `1` (Monday) to `7` (Sunday).
 #'
+#' @family calendar functions
+#'
 #' @export
 #'
 #' @examples
@@ -138,6 +142,7 @@ fixed_week_day<-function(month, week, dayofweek, weight=1, validity=NULL){
 #' easter_day(1) #Easter Monday
 #' easter_day(-2) # Easter Good Friday
 #'
+#' @family calendar functions
 #' @export
 easter_day<-function(offset, julian=FALSE, weight=1, validity=NULL){
   return (structure(list(offset=offset, julian=julian, weight=weight, validity=validity), class=c(EASTERDAY, HOLIDAY)))
@@ -166,6 +171,7 @@ easter_day<-function(offset, julian=FALSE, weight=1, validity=NULL){
 #' @param date the date of the holiday in the format `"YYYY-MM-DD"`.
 #'
 #'
+#' @family calendar functions
 #' @examples
 #' single_day("1999-03-19")
 #' @export
@@ -218,6 +224,7 @@ single_day<-function(date, weight=1){
 #' }
 #'
 #'
+#' @family calendar functions
 #' @export
 #' @examples
 #' special_day("EASTERMONDAY") # add Easter Monday
@@ -273,6 +280,7 @@ special_day<-function(event, offset=0, weight=1, validity=NULL){
 #' or the 1-group (\code{contrasts = TRUE}).
 #' @export
 #'
+#' @family calendar functions
 #' @examples
 td<-function(frequency, start, length, s, groups=c(1,2,3,4,5,6,0), contrasts=TRUE){
   if (!missing(s) && is.ts(s)) {
@@ -305,6 +313,7 @@ td<-function(frequency, start, length, s, groups=c(1,2,3,4,5,6,0), contrasts=TRU
 #' @param single boolean indication if a single variable (`TRUE`) should be return or a matrix (`FALSE`, the default) containing the different holidays in separate columns.
 #' @returns A matrix where each column is associated to a holiday (in the order of creation of the holiday) and each row to a date.
 #'
+#' @family calendar functions
 #' @examples
 #' BE <- national_calendar(list(
 #'   fixed_day(7,21),
@@ -338,6 +347,7 @@ holidays<-function(calendar, start, length, nonworking=c(6,7), type=c("Skip", "A
 #'
 #' @return The long term means corresponding to each group/period, starting with the 0-group.
 #' @export
+#' @family calendar functions
 #'
 #' @examples
 long_term_mean <-function(calendar,frequency,groups=c(1,2,3,4,5,6,0), holiday=7){
@@ -355,6 +365,7 @@ long_term_mean <-function(calendar,frequency,groups=c(1,2,3,4,5,6,0), holiday=7)
 #' @inheritParams easter_day
 #'
 #' @export
+#' @family calendar functions
 #'
 #' @examples
 #' easter_dates(2020, 2021)
@@ -368,6 +379,7 @@ easter_dates<-function(year0, year1, julian = FALSE){
 #' @inheritParams td
 #' @param w indicates day of the month when inventories and other stock are reported (to denote the last day of the month enter 31).
 #' @export
+#' @family calendar functions
 stock_td<-function(frequency, start, length, s, w = 31){
   if (!missing(s) && is.ts(s)) {
     frequency = stats::frequency(s)
@@ -511,6 +523,7 @@ weighted_calendar<-function(calendars, weights){
 #' @param days list of days of the calendars
 #'
 #' @export
+#' @family calendar functions
 #'
 #' @examples
 #' BE <- national_calendar(list(
@@ -541,6 +554,7 @@ national_calendar<-function(days){
 #' @return The variables corresponding to each group, starting with the 0-group (\code{contrasts = FALSE})
 #' or the 1-group (\code{contrasts = TRUE}).
 #' @export
+#' @family calendar functions
 #'
 #' @examples
 #' BE <- national_calendar(list(

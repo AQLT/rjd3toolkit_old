@@ -9,7 +9,8 @@ seasonality_kruskalwallis(data, period, nyears = 0)
 \arguments{
 \item{data}{the input data.}
 
-\item{period}{Tested periodicity.}
+\item{period}{Tested periodicity.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 
 \item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
 in periods (positive value) or years (negative values).
@@ -28,3 +29,13 @@ Non parametric test on the ranks.
 seasonality_kruskalwallis(ABS$X0.2.09.10.M, 12)
 seasonality_kruskalwallis(randoms_t(2, 1000), 7)
 }
+\seealso{
+Other seasonality tests: 
+\code{\link{seasonality_canovahansen}()},
+\code{\link{seasonality_combined}()},
+\code{\link{seasonality_friedman}()},
+\code{\link{seasonality_f}()},
+\code{\link{seasonality_periodogram}()},
+\code{\link{seasonality_qs}()}
+}
+\concept{seasonality tests}

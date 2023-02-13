@@ -24,3 +24,18 @@ day # 21 July, with weight=0.5 from Jan 2010
 day <- fixed_day(12, 25, .5, validity = list(end = "2010-01-01"))
 day # 21 July, with weight=0.9 until Jan 2010
 }
+\seealso{
+Other calendar functions: 
+\code{\link{calendar_td}()},
+\code{\link{easter_dates}()},
+\code{\link{easter_day}()},
+\code{\link{fixed_week_day}()},
+\code{\link{holidays}()},
+\code{\link{long_term_mean}()},
+\code{\link{national_calendar}()},
+\code{\link{single_day}()},
+\code{\link{special_day}()},
+\code{\link{stock_td}()},
+\code{\link{td}()}
+}
+\concept{calendar functions}

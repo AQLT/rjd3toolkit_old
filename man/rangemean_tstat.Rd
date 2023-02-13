@@ -9,7 +9,8 @@ rangemean_tstat(data, period = 0, groupsize = 0, trim = 0)
 \arguments{
 \item{data}{data to test.}
 
-\item{period}{periodicity of the data.}
+\item{period}{periodicity of the data.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 
 \item{groupsize}{number of observations per group (before being trimmed).
 The default group size (\code{groupsize = 0}) is computed as followed:

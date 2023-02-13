@@ -32,3 +32,17 @@ remove_ramp(x, start = NULL, end = NULL, name = NULL)
 Generic function to add outliers or Ramp regressors (\code{add_outlier()} and \code{add_ramp()})
 to a specification or to remove them (\code{remove_outlier()} and \code{remove_ramp()}).
 }
+\seealso{
+Other specification functions: 
+\code{\link{add_usrdefvar}()},
+\code{\link{set_arima}()},
+\code{\link{set_automodel}()},
+\code{\link{set_basic}()},
+\code{\link{set_benchmarking}()},
+\code{\link{set_easter}()},
+\code{\link{set_estimate}()},
+\code{\link{set_outlier}()},
+\code{\link{set_tradingdays}()},
+\code{\link{set_transform}()}
+}
+\concept{specification functions}

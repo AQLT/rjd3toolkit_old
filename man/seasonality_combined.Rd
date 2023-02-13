@@ -9,7 +9,8 @@ seasonality_combined(data, period, firstperiod = 1, mul = TRUE)
 \arguments{
 \item{data}{the input data.}
 
-\item{period}{Tested periodicity.}
+\item{period}{Tested periodicity.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 
 \item{firstperiod}{First period of the series (1-based)}
 
@@ -25,3 +26,13 @@ Combined test on the presence of identifiable seasonality (see Ladiray and Quenn
 seasonality_combined(ABS$X0.2.09.10.M, 12)
 seasonality_combined(randoms_t(2, 1000), 7)
 }
+\seealso{
+Other seasonality tests: 
+\code{\link{seasonality_canovahansen}()},
+\code{\link{seasonality_friedman}()},
+\code{\link{seasonality_f}()},
+\code{\link{seasonality_kruskalwallis}()},
+\code{\link{seasonality_periodogram}()},
+\code{\link{seasonality_qs}()}
+}
+\concept{seasonality tests}

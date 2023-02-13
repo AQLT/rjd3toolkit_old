@@ -9,7 +9,8 @@ seasonality_f(data, period, model = c("AR", "D1", "WN"), nyears = 0)
 \arguments{
 \item{data}{the input data.}
 
-\item{period}{Tested periodicity.}
+\item{period}{Tested periodicity.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 
 \item{model}{the model to use for the residuals.}
 
@@ -30,3 +31,13 @@ Estimation of a model with seasonal dummies. Joint F-test on the coefficients of
 seasonality_f(ABS$X0.2.09.10.M, 12)
 seasonality_f(randoms_t(2, 1000), 7)
 }
+\seealso{
+Other seasonality tests: 
+\code{\link{seasonality_canovahansen}()},
+\code{\link{seasonality_combined}()},
+\code{\link{seasonality_friedman}()},
+\code{\link{seasonality_kruskalwallis}()},
+\code{\link{seasonality_periodogram}()},
+\code{\link{seasonality_qs}()}
+}
+\concept{seasonality tests}

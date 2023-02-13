@@ -22,6 +22,7 @@ NULL
 #'
 #' @param data Series being differenced.
 #' @param period Period of the series.
+#' If `data` is a `ts` object, by default `period` is set to the frequency of `data`.
 #'
 #' @return
 #' Stationary transformation
@@ -30,10 +31,10 @@ NULL
 #' * differences:
 #'    * lag: ddata(t)=data(t)-data(t-lag)
 #'    * order: order of the differencing
-#' @md
 #' @export
-#'
 #' @examples
+#' do_stationary(retail$BookStores)
+#'
 do_stationary<-function(data, period){
   if (is.ts(data) & missing(period))
     period <- frequency(data)
@@ -51,8 +52,7 @@ do_stationary<-function(data, period){
 #'
 #' The series is differentiated till its variance is decreasing.
 #'
-#' @param data Series being differenced.
-#' @param period Period considered in the automatic differencing.
+#' @inheritParams do_stationary
 #' @param mad Use of MAD in the computation of the variance (true by default).
 #' @param centile Percentage of the data used for computing the variance (90 by default).
 #' @param k tolerance in the decrease of the variance. The algorithm stops if the new varance is higher than k*the old variance.
@@ -67,7 +67,7 @@ do_stationary<-function(data, period){
 #' @export
 #'
 #' @examples
-#' z <- differencing_fast(log(ABS$X0.2.09.10.M),12)
+#' z <- differencing_fast(log(ABS$X0.2.09.10.M))
 #'
 differencing_fast<-function(data, period, mad=TRUE, centile=90, k=1.2){
   if (is.ts(data) & missing(period))
@@ -109,6 +109,7 @@ differences<-function(data, lags=1, mean=TRUE){
 #'
 #' @param data data to test.
 #' @param period periodicity of the data.
+#' If `data` is a `ts` object, by default `period` is set to the frequency of `data`.
 #' @param groupsize number of observations per group (before being trimmed).
 #' The default group size (`groupsize = 0`) is computed as followed:
 #' - if `period = 12` or `period = 6`, it is equal to `12`;

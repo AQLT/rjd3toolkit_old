@@ -14,3 +14,18 @@ ucarima_wk(ucm, cmp, signal = TRUE, nspectrum = 601, nwk = 300)
 \description{
 Wiener Kolmogorov Estimators
 }
+\seealso{
+Other SARIMA functions: 
+\code{\link{arima_model}()},
+\code{\link{arima_properties}()},
+\code{\link{arima_sum}()},
+\code{\link{sarima_decompose}()},
+\code{\link{sarima_estimate}()},
+\code{\link{sarima_model}()},
+\code{\link{sarima_properties}()},
+\code{\link{sarima_random}()},
+\code{\link{ucarima_canonical}()},
+\code{\link{ucarima_estimate}()},
+\code{\link{ucarima_model}()}
+}
+\concept{SARIMA functions}

@@ -59,7 +59,6 @@ td_f<-function(s, model=c("D1", "DY", "DYD1", "WN", "AIRLINE", "R011", "R100"), 
 #' @inheritParams td_f
 #' @param differencing differencing lags.
 #'
-#' @return
 #' @export
 #'
 #' @examples

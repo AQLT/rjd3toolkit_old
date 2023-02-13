@@ -20,3 +20,18 @@ SARIMA Properties
 mod1 <- sarima_model(period = 12, d = 1, bd = 1, theta = 0.2, btheta = 0.2)
 sarima_properties(mod1)
 }
+\seealso{
+Other SARIMA functions: 
+\code{\link{arima_model}()},
+\code{\link{arima_properties}()},
+\code{\link{arima_sum}()},
+\code{\link{sarima_decompose}()},
+\code{\link{sarima_estimate}()},
+\code{\link{sarima_model}()},
+\code{\link{sarima_random}()},
+\code{\link{ucarima_canonical}()},
+\code{\link{ucarima_estimate}()},
+\code{\link{ucarima_model}()},
+\code{\link{ucarima_wk}()}
+}
+\concept{SARIMA functions}

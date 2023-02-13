@@ -17,3 +17,18 @@ Single Date
 \examples{
 single_day("1999-03-19")
 }
+\seealso{
+Other calendar functions: 
+\code{\link{calendar_td}()},
+\code{\link{easter_dates}()},
+\code{\link{easter_day}()},
+\code{\link{fixed_day}()},
+\code{\link{fixed_week_day}()},
+\code{\link{holidays}()},
+\code{\link{long_term_mean}()},
+\code{\link{national_calendar}()},
+\code{\link{special_day}()},
+\code{\link{stock_td}()},
+\code{\link{td}()}
+}
+\concept{calendar functions}

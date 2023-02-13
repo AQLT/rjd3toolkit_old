@@ -9,7 +9,8 @@ differencing_fast(data, period, mad = TRUE, centile = 90, k = 1.2)
 \arguments{
 \item{data}{Series being differenced.}
 
-\item{period}{Period considered in the automatic differencing.}
+\item{period}{Period of the series.
+If \code{data} is a \code{ts} object, by default \code{period} is set to the frequency of \code{data}.}
 
 \item{mad}{Use of MAD in the computation of the variance (true by default).}
 
@@ -33,6 +34,6 @@ Stationary transformation
 The series is differentiated till its variance is decreasing.
 }
 \examples{
-z <- differencing_fast(log(ABS$X0.2.09.10.M),12)
+z <- differencing_fast(log(ABS$X0.2.09.10.M))
 
 }

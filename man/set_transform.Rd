@@ -35,3 +35,17 @@ Considered only when \code{fun = "Auto"}.}
 \description{
 Set Transform Specification
 }
+\seealso{
+Other specification functions: 
+\code{\link{add_outlier}()},
+\code{\link{add_usrdefvar}()},
+\code{\link{set_arima}()},
+\code{\link{set_automodel}()},
+\code{\link{set_basic}()},
+\code{\link{set_benchmarking}()},
+\code{\link{set_easter}()},
+\code{\link{set_estimate}()},
+\code{\link{set_outlier}()},
+\code{\link{set_tradingdays}()}
+}
+\concept{specification functions}
